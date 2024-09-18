@@ -11,7 +11,9 @@ import java.util.List;
 
 @Entity
 @DiscriminatorValue("TUTOR")
+@Table(name = "tutor")
 public class Tutor extends Usuario{
+
 
     @Column(name = "especialidad", columnDefinition = "TEXT")
     private String especialidad;
@@ -23,10 +25,10 @@ public class Tutor extends Usuario{
     private double tarifa;
 
 
-    /*@OneToOne
+    @OneToOne
     @JoinColumn(name = "usuario_id", referencedColumnName = "id"
     , foreignKey = @ForeignKey(name = "FK_tutor_usuario"))
-    Usuario usuario;*/
+    Usuario usuario;
 
     @ManyToOne
     @JoinColumn(name = "favoritos_id", referencedColumnName = "id"
