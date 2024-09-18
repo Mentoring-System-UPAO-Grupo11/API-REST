@@ -1,12 +1,7 @@
-package com.hampcode.tutoria_apoyo_academico.domain.entities;
+package com.hampcode.tutoria_apoyo_academico.model.entities;
 
-import com.hampcode.tutoria_apoyo_academico.domain.enums.ReporteStatus;
 import jakarta.persistence.*;
 import lombok.Data;
-
-
-import java.time.LocalDate;
-import java.util.List;
 
 @Data
 @Entity

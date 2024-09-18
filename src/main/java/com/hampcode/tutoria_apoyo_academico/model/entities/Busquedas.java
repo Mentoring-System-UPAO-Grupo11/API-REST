@@ -1,4 +1,4 @@
-package com.hampcode.tutoria_apoyo_academico.domain.entities;
+package com.hampcode.tutoria_apoyo_academico.model.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -19,7 +19,7 @@ public class Busquedas {
     private String resultados;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id", referencedColumnName = "id"
-            , foreignKey = @ForeignKey(name = "FK_busqueda_usuarios"))
-    Usuario usuario;
+    @JoinColumn(name = "tutor_id", referencedColumnName = "id"
+            , foreignKey = @ForeignKey(name = "FK_busqueda_tutor"))
+    Tutor tutor;
 }

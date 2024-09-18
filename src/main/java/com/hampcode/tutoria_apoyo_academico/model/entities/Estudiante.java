@@ -1,14 +1,13 @@
-package com.hampcode.tutoria_apoyo_academico.domain.entities;
+package com.hampcode.tutoria_apoyo_academico.model.entities;
 
-import com.hampcode.tutoria_apoyo_academico.domain.enums.Role;
 import jakarta.persistence.*;
 import lombok.Data;
 
 
 @Entity
-@DiscriminatorValue("ESTUDIANTE")
+@Data
 @Table(name = "estudiante")
-public class Estudiante extends Usuario {
+public class Estudiante{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,8 +22,4 @@ public class Estudiante extends Usuario {
     @Column(name = "historial_academico",columnDefinition = "TEXT")
     private String historial_academico;
 
-    @OneToOne
-    @JoinColumn(name = "usuario_id", referencedColumnName = "id"
-            , foreignKey = @ForeignKey(name = "FK_estudiante_usuario"))
-    Usuario usuario;
 }

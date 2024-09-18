@@ -1,4 +1,4 @@
-package com.hampcode.tutoria_apoyo_academico.domain.entities;
+package com.hampcode.tutoria_apoyo_academico.model.entities;
 
 
 import jakarta.persistence.*;
