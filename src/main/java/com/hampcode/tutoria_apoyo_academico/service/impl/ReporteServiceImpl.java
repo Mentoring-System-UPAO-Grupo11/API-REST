@@ -1,11 +1,5 @@
 package com.hampcode.tutoria_apoyo_academico.service.impl;
 
-import com.hampcode.tutoria_apoyo_academico.domain.entities.Reporte;
-import com.hampcode.tutoria_apoyo_academico.service.ReporteService;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class ReporteServiceImpl /*implements ReporteService*/ {
 
     /*List<Reporte> reportes = new ArrayList<Reporte>();
