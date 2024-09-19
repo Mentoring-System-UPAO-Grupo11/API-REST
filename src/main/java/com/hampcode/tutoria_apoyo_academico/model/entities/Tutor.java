@@ -5,6 +5,7 @@ import lombok.Data;
 
 
 @Entity
+@Data
 //@DiscriminatorValue("TUTOR")
 public class Tutor extends Usuario{
 

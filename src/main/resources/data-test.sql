@@ -15,7 +15,14 @@ VALUES ('Carlos Pérez', 'carlos.pere5@gmail.com', 'pass123', '1985-12-15', CURR
 INSERT INTO tutor (id, especialidad, disponibilidad, tarifa, favoritos_id)
 VALUES (CURRVAL('usuario_id_seq'), 'Matemáticas', 'Lunes a Viernes', 20.0, NULL);
 
+--Insertar Usuario
+INSERT INTO usuario (nombre, email, password, fecha_nacimiento, created_at, updated_at)
+VALUES ('Laura Fernández', 'laura.fernandez@gmail.com', 'password456', '1982-03-22', CURRENT_DATE, CURRENT_DATE)
+    RETURNING id;
 
+-- Insertar Tutor
+INSERT INTO tutor (id, especialidad, disponibilidad, tarifa, favoritos_id)
+VALUES (CURRVAL('usuario_id_seq'), 'Lenguaje', 'Martes y Jueves', 25.0, NULL);
 --Insertar datos en la tabla sesiones
 INSERT INTO sesiones (id, precio, fecha, duracion, tema, estado)
 VALUES (1, 20.00, '2024-09-18', 60, 'Álgebra Lineal', 'Completada'),
