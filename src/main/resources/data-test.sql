@@ -1,17 +1,22 @@
--- Insertar Usuarios Base
-INSERT INTO usuario (id, nombre, email, password, fecha_nacimiento, created_at, updated_at, tipo_usuario)
-VALUES (1, 'Carlos Pérez', 'cperez@upao.edu.pe', 'pass123', '2000-05-17', '2024-09-17', NULL,'ESTUDIANTE'),
-       (2, 'Ana Gómez', 'agomez@upao.edu.pe', 'ana456', '1999-07-20', '2024-09-17', NULL, 'TUTOR');
 
--- Insertar Tutor (usando el mismo ID de usuario)
---INSERT INTO tutor (id, especialidad, disponibilidad, tarifa)
---VALUES (1,'Matemáticas', 'Lunes a Viernes', 50.00);
+-- Insertar en la tabla usuario
+INSERT INTO usuario (nombre, email, password, fecha_nacimiento, created_at, updated_at)
+VALUES ('Ana García', 'anawa.garcia5@gmail.com', 'password123', '1999-07-20', CURRENT_DATE, CURRENT_DATE);
 
--- Insertar Estudiante (usando el mismo ID de usuario)
---INSERT INTO estudiante (id, intereses, preferencias, historial_academico)
---VALUES (2, 'Ingeniería de Software', 'Mañanas', 'Promedio 17.5');
+-- Insertar en la tabla estudiante
+INSERT INTO estudiante (id, intereses, preferencias, historial_academico)
+VALUES (currval('usuario_id_seq'), 'Ciencia', 'Clases online', 'Historial académico de ejemplo');
 
--- Insertar datos en la tabla sesiones
+--Insertar Usuario
+INSERT INTO usuario (nombre, email, password, fecha_nacimiento, created_at, updated_at)
+VALUES ('Carlos Pérez', 'carlos.pere5@gmail.com', 'pass123', '1985-12-15', CURRENT_DATE, CURRENT_DATE)
+    RETURNING id;
+--Insertar Tutor
+INSERT INTO tutor (id, especialidad, disponibilidad, tarifa, favoritos_id)
+VALUES (CURRVAL('usuario_id_seq'), 'Matemáticas', 'Lunes a Viernes', 20.0, NULL);
+
+
+--Insertar datos en la tabla sesiones
 INSERT INTO sesiones (id, precio, fecha, duracion, tema, estado)
 VALUES (1, 20.00, '2024-09-18', 60, 'Álgebra Lineal', 'Completada'),
        (2, 30.00, '2024-09-19', 90, 'Cálculo Diferencial', 'Pendiente');
@@ -28,8 +33,8 @@ VALUES (1, 8, 'Buen desempeño, pero puede mejorar en algunos conceptos.'),
 
 -- Insertar datos en la tabla pagos
 INSERT INTO pagos (id, monto, created_at, payment_status)
-VALUES (1, 50.00, '2024-09-17', 'COMPLETADO'),
-       (2, 30.00, '2024-09-17', 'PENDIENTE');
+VALUES (1, 50.00, '2024-09-17', 'PAID'),
+       (2, 30.00, '2024-09-17', 'PENDING');
 
 -- Insertar datos en la tabla favoritos
 INSERT INTO favoritos (id)

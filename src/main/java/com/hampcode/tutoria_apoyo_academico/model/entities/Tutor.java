@@ -5,7 +5,7 @@ import lombok.Data;
 
 
 @Entity
-@DiscriminatorValue("TUTOR")
+//@DiscriminatorValue("TUTOR")
 public class Tutor extends Usuario{
 
     @Column(name = "especialidad", columnDefinition = "TEXT")

@@ -8,8 +8,8 @@ import java.time.LocalDate;
 @Entity
 @Data
 @Table(name = "usuario")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "tipo_usuario", discriminatorType = DiscriminatorType.STRING)
+@Inheritance(strategy = InheritanceType.JOINED)
+//@DiscriminatorColumn(name = "tipo_usuario", discriminatorType = DiscriminatorType.STRING)
 public abstract class Usuario {
 
     @Id
@@ -34,12 +34,12 @@ public abstract class Usuario {
     @Column(name = "updated_at")
     private LocalDate updatedAt;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    /*@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "tutor_id", referencedColumnName = "id")
     private Tutor tutor;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "estudante_id", referencedColumnName = "id")
-    private Estudiante estudiante;
+    private Estudiante estudiante;*/
 
 }
