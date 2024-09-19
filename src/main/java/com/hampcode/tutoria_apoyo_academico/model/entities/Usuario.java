@@ -5,10 +5,12 @@ import lombok.Data;
 
 import java.time.LocalDate;
 
-@Data
 @Entity
+@Data
 @Table(name = "usuario")
-public class Usuario {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo_usuario", discriminatorType = DiscriminatorType.STRING)
+public abstract class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,30 +19,27 @@ public class Usuario {
     @Column(name = "nombre", length = 50)
     private String nombre;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true, length = 50)
     private String email;
 
+    @Column(name = "password", length = 50)
     private String password;
 
     @Column(name = "fecha_nacimiento", length = 50)
     private LocalDate fecha_nacimiento;
 
     @Column(name="created_at")
-    private LocalDate cratedAt;
+    private LocalDate createdAt;
 
-    @Column(name = "tipo")
-    private String tipo;
-
-    @Column(name = "update_at")
+    @Column(name = "updated_at")
     private LocalDate updatedAt;
 
-
-    @OneToOne(targetEntity = Tutor.class, fetch = FetchType.EAGER)
-    @JoinColumn(nullable = false, name = "tutor_id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "tutor_id", referencedColumnName = "id")
     private Tutor tutor;
 
-    @OneToOne(targetEntity = Estudiante.class, fetch = FetchType.EAGER)
-    @JoinColumn(nullable = false, name = "estudiante_id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "estudante_id", referencedColumnName = "id")
     private Estudiante estudiante;
 
 }

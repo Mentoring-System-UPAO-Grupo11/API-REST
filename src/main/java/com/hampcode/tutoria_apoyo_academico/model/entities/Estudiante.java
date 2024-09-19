@@ -5,13 +5,8 @@ import lombok.Data;
 
 
 @Entity
-@Data
-@Table(name = "estudiante")
-public class Estudiante{
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+@DiscriminatorValue("ESTUDIANTE")
+public class Estudiante extends Usuario {
 
     @Column(name = "intereses", length = 50)
     private String intereses_academicos;

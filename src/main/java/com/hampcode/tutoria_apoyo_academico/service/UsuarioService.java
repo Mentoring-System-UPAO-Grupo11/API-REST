@@ -1,7 +1,7 @@
 package com.hampcode.tutoria_apoyo_academico.service;
 
 public class UsuarioService {
-    List<UsuarioResponseDTO> getAllUsers();
+    /*List<UsuarioResponseDTO> getAllUsers();
 
     User createUser(UserRequestDTO userRequestDTO);
     User updateUser(Integer userId, UserRequestDTO userDTO);
@@ -12,5 +12,5 @@ public class UsuarioService {
     User associateProfileWithUser(int userId, String profileId);
     User dessasociateProfileWithUser(int userId);
     void followUser(Integer userId, Integer followerId);
-    void removeFollowUser(Integer userId, Integer followedUserId);
+    void removeFollowUser(Integer userId, Integer followedUserId);*/
 }

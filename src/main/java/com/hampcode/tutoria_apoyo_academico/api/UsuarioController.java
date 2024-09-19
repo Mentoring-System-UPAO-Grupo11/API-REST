@@ -4,7 +4,7 @@ import com.hampcode.tutoria_apoyo_academico.model.entities.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class UsuarioController {
-    @Autowired
+    /*@Autowired
     private UsuarioService userService;
 
     private LoginRequestDTO loginRequestDTO;
@@ -52,5 +52,5 @@ public class UsuarioController {
         } catch (Exception e) {
             return new ResponseEntity<>("Error interno del servidor", HttpStatus.INTERNAL_SERVER_ERROR);
         }
-    }
+    }*/
 }
