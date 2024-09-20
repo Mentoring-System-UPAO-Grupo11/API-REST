@@ -18,22 +18,18 @@ public class TutorController {
     @Autowired
     private TutorService tutorService;
 
-    @GetMapping("/buscar")
-    public ResponseEntity<List<Tutor>> buscarPorEspecialidad(@RequestParam String especialidad) {
-
-        List<Tutor> tutores = tutorService.buscarPorEspecialidad(especialidad);
-
-        System.out.println(tutores);
-
-        if (tutores.isEmpty()) {
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.ok(tutores);
-    }
-
     @GetMapping("/all")
     public List<Tutor> obtenerTodosLosTutores() {
         return tutorService.findAll();
+    }
+
+    @GetMapping("/filtrar")
+    public List<Tutor> buscarTutores(
+            @RequestParam(required = false) Double tarifa,
+            @RequestParam(required = false) String especialidad,
+            @RequestParam(required = false) Double reseñasPromedio) {
+
+        return tutorService.filtrarTutores(tarifa, especialidad, reseñasPromedio);
     }
 
 

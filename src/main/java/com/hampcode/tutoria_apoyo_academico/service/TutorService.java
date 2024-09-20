@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public interface TutorService {
 
-    public List<Tutor> buscarPorEspecialidad(String especialidad);
-
     public List<Tutor> findAll();
+
+    public List<Tutor> filtrarTutores(Double tarifa, String especialidad, Double reseñasPromedio);
 }
