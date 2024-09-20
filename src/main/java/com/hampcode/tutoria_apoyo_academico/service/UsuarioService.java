@@ -1,16 +1,18 @@
 package com.hampcode.tutoria_apoyo_academico.service;
 
-public class UsuarioService {
-    /*List<UsuarioResponseDTO> getAllUsers();
+import com.hampcode.tutoria_apoyo_academico.model.dto.UsuarioDTO;
+import com.hampcode.tutoria_apoyo_academico.model.dto.UsuarioResDTO;
+import com.hampcode.tutoria_apoyo_academico.model.entities.Usuario;
 
-    User createUser(UserRequestDTO userRequestDTO);
-    User updateUser(Integer userId, UserRequestDTO userDTO);
-    User getUserbyId(Integer userId);
-    Optional<User> findByEmail(String email);
-    void deleteUser(Integer userId);
-    boolean authenticateUser(String email, String password);
-    User associateProfileWithUser(int userId, String profileId);
-    User dessasociateProfileWithUser(int userId);
-    void followUser(Integer userId, Integer followerId);
-    void removeFollowUser(Integer userId, Integer followedUserId);*/
+import java.util.List;
+import java.util.Optional;
+
+public interface UsuarioService {
+    List<UsuarioDTO> getAllUsers();
+
+    Usuario createUsuario(UsuarioResDTO userResDTO);
+    Usuario updateUsuario(Integer usuarioId, UsuarioResDTO usuarioDTO);
+    Optional<Usuario> findByEmail(String email);
+
+
 }

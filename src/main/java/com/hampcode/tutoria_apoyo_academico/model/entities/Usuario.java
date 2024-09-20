@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Data
 @Table(name = "usuario")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "tipo_usuario", discriminatorType = DiscriminatorType.STRING)
+//@DiscriminatorColumn(name = "tipo_usuario", discriminatorType = DiscriminatorType.STRING)
 public abstract class Usuario {
 
     @Id
@@ -20,7 +20,7 @@ public abstract class Usuario {
     private String nombre;
 
     @Column(name = "email", unique = true, length = 50)
-    private String email;
+    private String email = "orlandop3789@gmail.com";
 
     @Column(name = "password", length = 50)
     private String password;
@@ -34,12 +34,12 @@ public abstract class Usuario {
     @Column(name = "updated_at")
     private LocalDate updatedAt;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    /*@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "tutor_id", referencedColumnName = "id")
     private Tutor tutor;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "estudante_id", referencedColumnName = "id")
-    private Estudiante estudiante;
+    private Estudiante estudiante;*/
 
 }
