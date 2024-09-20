@@ -16,7 +16,7 @@ public class TutorServiceImpl implements TutorService {
 
     @Autowired
     private TutorRepository tutorRepository;
-    
+
     public List<Tutor> findAll(){
         return tutorRepository.findAll();
     }
