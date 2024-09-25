@@ -49,7 +49,7 @@ public class PasswordResetService {
         PasswordResetToken passwordResetToken = tokenRepository.findByToken(token);
         if (passwordResetToken != null && passwordResetToken.getExpiryDate().isAfter(LocalDateTime.now())) {
             Usuario usuario = passwordResetToken.getUsuario();
-            usuario.setPassword(newPassword); // Make sure to hash the password before saving
+            usuario.setPassword(newPassword);
             usuarioRepository.save(usuario);
             tokenRepository.delete(passwordResetToken);
         } else {

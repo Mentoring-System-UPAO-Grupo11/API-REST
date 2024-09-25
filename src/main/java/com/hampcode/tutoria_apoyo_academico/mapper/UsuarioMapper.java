@@ -1,28 +1,36 @@
 package com.hampcode.tutoria_apoyo_academico.mapper;
 
-import com.hampcode.tutoria_apoyo_academico.config.ModelMapper;
-import com.hampcode.tutoria_apoyo_academico.model.dto.UsuarioDTO;
+
 import com.hampcode.tutoria_apoyo_academico.model.dto.UsuarioResDTO;
+import com.hampcode.tutoria_apoyo_academico.model.dto.UsuarioReqDTO;
 import com.hampcode.tutoria_apoyo_academico.model.entities.Usuario;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
-@AllArgsConstructor
 public class UsuarioMapper {
+
+
     private ModelMapper modelMapper;
-
-    public Usuario convertToEntity(UsuarioResDTO usuarioResDTO) {
-        return modelMapper.map(usuarioResDTO, Usuario.class);
+    @Autowired
+    public UsuarioMapper(ModelMapper modelMapper) {
+        this.modelMapper = modelMapper;
     }
 
-    public UsuarioDTO convertToDTO(Usuario user) {
-        return modelMapper.map(user, UsuarioDTO.class);
+    public Usuario convertToEntity(UsuarioReqDTO usuarioReqDTO) {
+        return modelMapper.map(usuarioReqDTO, Usuario.class);
     }
 
-    public List<UsuarioDTO> convertToListDTO(List<Usuario> usuarios) {
+    public UsuarioResDTO convertToDTO(Usuario usuario) {
+        return modelMapper.map(usuario, UsuarioResDTO.class);
+    }
+
+    public List<UsuarioResDTO> convertToListDTO(List<Usuario> usuarios) {
         return usuarios.stream()
                 .map(this::convertToDTO)
                 .toList();

@@ -6,7 +6,6 @@ import lombok.Data;
 
 @Entity
 @Data
-//@DiscriminatorValue("TUTOR")
 public class Tutor extends Usuario{
 
     @Column(name = "especialidad", columnDefinition = "TEXT")
@@ -18,8 +17,12 @@ public class Tutor extends Usuario{
     private Float tarifa;
 
     @ManyToOne
-    @JoinColumn(name = "favoritos_id", referencedColumnName = "id"
-            , foreignKey = @ForeignKey(name = "FK_tutor_favoritos"))
-    Favoritos favoritos;
+    @JoinColumn(name = "favoritos_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_tutor_favoritos"))
+    private Favoritos favoritos;
+
+    @PrePersist
+    public void prePersist() {
+        this.tipo = "TUTOR"; // Asigna el tipo de usuario
+    }
 
 }
