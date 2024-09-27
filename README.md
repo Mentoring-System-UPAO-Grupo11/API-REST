@@ -167,3 +167,4 @@ Este diagrama ilustra el esquema de la base de datos utilizada por la aplicació
 
 10. **Preparación para el Lanzamiento:** A medida que se acerque el final del segundo sprint, prepararse para el lanzamiento del producto con un plan de despliegue claro, asegurando que todas las funcionalidades estén completamente probadas y documentadas.
 
+# repo-pruebas

@@ -1,8 +1,7 @@
-package com.hampcode.tutoria_apoyo_academico.domain.entities;
+package com.hampcode.tutoria_apoyo_academico.model.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.hampcode.tutoria_apoyo_academico.domain.enums.PaymentStatus;
+import com.hampcode.tutoria_apoyo_academico.model.enums.PaymentStatus;
 import jakarta.persistence.*;
 import lombok.Data;
 
