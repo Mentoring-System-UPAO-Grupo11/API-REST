@@ -20,7 +20,6 @@ public class Horario {
     private String dia; // Ejemplo: Lunes, Martes, etc.
     @Column
     private String aula;
-
     @Column
     private LocalDate fecha;
 
