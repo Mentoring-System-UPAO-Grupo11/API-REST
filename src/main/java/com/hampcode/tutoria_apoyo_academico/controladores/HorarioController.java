@@ -26,6 +26,8 @@ public class HorarioController {
 
         return horarioService.registrarHorarioAlCursoDel(horarioDTO, idTutorCurso);
     }
+
+    //CONSULTA PARA OBTENER LOS HORARIOS DISPONIBLES
     @GetMapping("/disponibles")
     public List<Horario> obtenerHorariosDisponibles(
             @RequestParam("fecha") String fechaString,

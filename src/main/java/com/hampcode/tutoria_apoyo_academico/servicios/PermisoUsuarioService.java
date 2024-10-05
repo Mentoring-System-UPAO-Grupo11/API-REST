@@ -1,5 +1,6 @@
 package com.hampcode.tutoria_apoyo_academico.servicios;
 
+import com.hampcode.tutoria_apoyo_academico.dto.PermisoUsuarioDTO;
 import com.hampcode.tutoria_apoyo_academico.entidades.PermisoUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,6 +51,19 @@ public class PermisoUsuarioService {
     }
     public PermisoUsuario buscarPorId(Long id) {
         return permisoUsuarioRepository.findById(id).orElse(null);
+    }
+
+    public PermisoUsuario crearPermisoUsuario(PermisoUsuarioDTO permisoUsuarioDTO) {
+
+        System.out.println("PERMISOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+        Usuario usuario = usuarioRepository.findById(permisoUsuarioDTO.getIdUsuario().intValue())
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+
+        Permiso permiso = permisoRepository.findById(permisoUsuarioDTO.getIdPermiso())
+                .orElseThrow(() -> new RuntimeException("Permiso no encontrado"));
+
+        PermisoUsuario permisoUsuario = new PermisoUsuario(usuario, permiso);
+        return permisoUsuarioRepository.save(permisoUsuario);
     }
 }
 

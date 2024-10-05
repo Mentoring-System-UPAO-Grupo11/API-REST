@@ -22,4 +22,14 @@ public class HorarioDTO {
     private LocalTime horaInicio; // Ejemplo: 09:00:00
     private LocalTime horaFin; // Ejemplo: 10:00:00
     private boolean disponible;
+
+    public HorarioDTO(String dia, String aula, LocalDate fecha, LocalTime horaInicio, LocalTime horaFin, boolean disponible) {
+        this.dia = dia;
+        this.aula = aula;
+        this.fecha = fecha;
+        this.horaInicio = horaInicio;
+        this.horaFin = horaFin;
+        this.disponible = disponible;
+    }
+
 }

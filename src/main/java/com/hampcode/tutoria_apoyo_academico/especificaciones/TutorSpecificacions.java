@@ -5,12 +5,12 @@ import org.springframework.data.jpa.domain.Specification;
 
 public class TutorSpecificacions {
 
-    public static Specification<Tutor> tarifaLessThanEqual(Double tarifa) {
+    public static Specification<Tutor> tarifaMenorOIgual(Double tarifa) {
         return (root, query, criteriaBuilder) ->
                 criteriaBuilder.lessThanOrEqualTo(root.get("tarifa"), tarifa);
     }
 
-    public static Specification<Tutor> especialidadEquals(String especialidad) {
+    public static Specification<Tutor> especialidadIgualA(String especialidad) {
         return (root, query, criteriaBuilder) ->
                 criteriaBuilder.equal(root.get("especialidad"), especialidad);
     }
