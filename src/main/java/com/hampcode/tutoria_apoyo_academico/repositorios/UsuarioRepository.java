@@ -10,11 +10,20 @@ import java.util.Optional;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+
     Optional<Usuario> findByEmail(String email);
 
-    @Query("SELECT u FROM Usuario u WHERE u.email = :email")
+    @Query(""
+            + "SELECT u "
+            + "FROM Usuario u "
+            + "WHERE u.email = :email")
     Usuario findByEmailQuery(@Param("email") String email);
 
-    @Query("SELECT COUNT(u) > 0 FROM Usuario u WHERE u.email = :email")
+    @Query(""
+            + "SELECT COUNT(u) > 0 "
+            + "FROM Usuario u "
+            + "WHERE u.email = :email")
     boolean existsByEmail(@Param("email") String email);
+
+    public Usuario findByToken(String token);
 }
