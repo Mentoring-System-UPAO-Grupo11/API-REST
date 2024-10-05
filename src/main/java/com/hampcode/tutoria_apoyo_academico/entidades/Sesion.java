@@ -30,25 +30,25 @@ public class Sesion {
     @Column(name = "estado",nullable = false, length = 50)
     private String estado;
 
-    @ManyToOne
-    @JoinColumn(name = "tutor_id", referencedColumnName = "id"
-            , foreignKey = @ForeignKey(name = "FK_sesion_tutor"))
-    Tutor tutor;
-
-    @ManyToOne
-    @JoinColumn(name = "estudiante_id", referencedColumnName = "id"
-            , foreignKey = @ForeignKey(name = "FK_sesion_estudiante"))
-    Estudiante estudiante;
-
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "paquete_sesiones_id", referencedColumnName = "id"
-            , foreignKey = @ForeignKey(name = "FK_sesion_paquete"))
-    PaqueteSesiones paqueteSesiones;
-
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "pagos_id", referencedColumnName = "id"
-            , foreignKey = @ForeignKey(name = "FK_sesion_pagos"))
-    Pagos pagos;
+//    @ManyToOne
+//    @JoinColumn(name = "tutor_id", referencedColumnName = "id"
+//            , foreignKey = @ForeignKey(name = "FK_sesion_tutor"))
+//    Tutor tutor;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "estudiante_id", referencedColumnName = "id"
+//            , foreignKey = @ForeignKey(name = "FK_sesion_estudiante"))
+//    Estudiante estudiante;
+//
+//    @JsonIgnore
+//    @ManyToOne
+//    @JoinColumn(name = "paquete_sesiones_id", referencedColumnName = "id"
+//            , foreignKey = @ForeignKey(name = "FK_sesion_paquete"))
+//    PaqueteSesiones paqueteSesiones;
+//
+//    @JsonIgnore
+//    @ManyToOne
+//    @JoinColumn(name = "pagos_id", referencedColumnName = "id"
+//            , foreignKey = @ForeignKey(name = "FK_sesion_pagos"))
+//    Pagos pagos;
 }

@@ -1,5 +1,6 @@
 package com.hampcode.tutoria_apoyo_academico.entidades;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,10 +21,10 @@ public class PasswordResetToken {
     @Column(nullable = false)
     private String token;
 
-    @OneToOne(targetEntity = Usuario.class, fetch = FetchType.EAGER)
-    @JoinColumn(nullable = false, name = "usuario_id")
-    private Usuario usuario;
-
-    @Column(nullable = false)
-    private LocalDateTime expiryDate;
+//    @OneToOne(targetEntity = Usuario.class, fetch = FetchType.EAGER)
+//    @JoinColumn(nullable = false, name = "usuario_id")
+//    private Usuario usuario;
+//
+//    @Column(nullable = false)
+//    private LocalDateTime expiryDate;
 }

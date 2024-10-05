@@ -18,8 +18,8 @@ public class Evaluaciones {
     @Column(name = "comentarios", columnDefinition = "TEXT")
     private String comentarios;
 
-    @ManyToOne
-    @JoinColumn(name = "sesion_id", referencedColumnName = "id"
-            , foreignKey = @ForeignKey(name = "FK_evaluaciones_sesion"))
-    private Sesion sesion;
+//    @ManyToOne
+//    @JoinColumn(name = "sesion_id", referencedColumnName = "id"
+//            , foreignKey = @ForeignKey(name = "FK_evaluaciones_sesion"))
+//    private Sesion sesion;
 }

@@ -21,11 +21,11 @@ public class PaqueteSesiones {
     @Column(name = "contenido", columnDefinition = "TEXT")
     private String contenido;
 
-    @OneToMany(mappedBy = "paqueteSesiones", cascade = CascadeType.ALL)
-    private List<Sesion> sesiones;
-
-    @ManyToOne
-    @JoinColumn(name = "pagos_id", referencedColumnName = "id"
-            , foreignKey = @ForeignKey(name = "FK_paquete_pagos"))
-    private Pagos pagoss;
+//    @OneToMany(mappedBy = "paqueteSesiones", cascade = CascadeType.ALL)
+//    private List<Sesion> sesiones;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "pagos_id", referencedColumnName = "id"
+//            , foreignKey = @ForeignKey(name = "FK_paquete_pagos"))
+//    private Pagos pagoss;
 }

@@ -21,8 +21,8 @@ public class Materiales {
     @Column(name = "enlace",nullable = false, length = 50)
     private String enlace;
 
-    @ManyToOne
-    @JoinColumn(name = "sesion_id", referencedColumnName = "id"
-            , foreignKey = @ForeignKey(name = "FK_materiales_sesion"))
-    private Sesion sesion;
+//    @ManyToOne
+//    @JoinColumn(name = "sesion_id", referencedColumnName = "id"
+//            , foreignKey = @ForeignKey(name = "FK_materiales_sesion"))
+//    private Sesion sesion;
 }

@@ -14,11 +14,11 @@ public class Favoritos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
-    @JoinColumn(name = "estudiante_id", referencedColumnName = "id"
-            , foreignKey = @ForeignKey(name = "FK_favoritos_estudiante"))
-    private Estudiante estudiante;
-
-    @OneToMany(mappedBy = "favoritos", cascade = CascadeType.ALL)
-    private List<Tutor> tutores;
+//    @ManyToOne
+//    @JoinColumn(name = "estudiante_id", referencedColumnName = "id"
+//            , foreignKey = @ForeignKey(name = "FK_favoritos_estudiante"))
+//    private Estudiante estudiante;
+//
+//    @OneToMany(mappedBy = "favoritos", cascade = CascadeType.ALL)
+//    private List<Tutor> tutores;
 }
