@@ -31,7 +31,7 @@ public class HorarioService {
 
         Optional<CursoTutor> optionalCursoTutor=cursoTutorRepository.findById(idCursoTutor);
         CursoTutor cursoTutorEncontrado = optionalCursoTutor.get();
-        Horario nuevoHorario =new Horario(horarioDTO.getDia(),horarioDTO.getAula(), horarioDTO.getHoraInicio(), horarioDTO.getHoraInicio(), true, cursoTutorEncontrado,horarioDTO.getFecha());
+        Horario nuevoHorario =new Horario(horarioDTO.getDia(),horarioDTO.getAula(), horarioDTO.getHoraInicio(), horarioDTO.getHoraFin(), true, cursoTutorEncontrado,horarioDTO.getFecha());
         horarioRepository.save(nuevoHorario);
         return ResponseEntity.ok("Horario registrado");
     }
