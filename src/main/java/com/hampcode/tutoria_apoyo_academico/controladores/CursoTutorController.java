@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/cursoTutor")
-public class CursoTutorController {
+public class    CursoTutorController {
 
     @Autowired
     private CursoTutorService cursoTutorService;
