@@ -50,4 +50,8 @@ import java.util.UUID;
         usuarioRepository.deleteById(idUsuario);
         return ResponseEntity.ok("Cuenta eliminada exitosamente");
     }
+
+    public Usuario validarTokenRecuperacion(String token) {
+        return usuarioRepository.findByToken(token);
+    }
 }
