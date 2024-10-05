@@ -7,10 +7,7 @@ import com.hampcode.tutoria_apoyo_academico.servicios.UsuarioServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -57,5 +54,10 @@ public class UsuarioControlador {
             e.printStackTrace();
             return new ResponseEntity<>("Error al intentar recuperar la contraseña", HttpStatus.INTERNAL_SERVER_ERROR);
         }
+    }
+    @DeleteMapping("/eliminarUsuario/{idUsuario}")
+    public ResponseEntity<String> eliminarUsuario(@PathVariable int idUsuario) {
+        System.out.println("Eliminar USUARIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+        return userService.eliminarUsuario(idUsuario);
     }
 }

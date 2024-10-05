@@ -3,6 +3,7 @@ package com.hampcode.tutoria_apoyo_academico.servicios;
 import com.hampcode.tutoria_apoyo_academico.entidades.Usuario;
 import com.hampcode.tutoria_apoyo_academico.repositorios.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -44,4 +45,9 @@ import java.util.UUID;
         return tokenVerificadorContraseña;
     }
 
+    public ResponseEntity<String> eliminarUsuario(int idUsuario) {
+        System.out.println("Eliminado usuario");
+        usuarioRepository.deleteById(idUsuario);
+        return ResponseEntity.ok("Cuenta eliminada exitosamente");
+    }
 }
